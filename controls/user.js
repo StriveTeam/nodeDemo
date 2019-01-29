@@ -26,13 +26,12 @@ function formatData(rows) {
 }
 
 module.exports = {
-
     fetchAll (req, res) {
         func.connPool(sql.queryAll, 'user', (err, rows) => {
-            if(err) { 
+            if(err) {
                 console.log(err)
                 return 
-            } 
+            }
             rows = formatData(rows);
             res.json({code: 200, msg: 'ok', users: rows});
         });
