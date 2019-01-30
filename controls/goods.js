@@ -27,7 +27,7 @@ module.exports = {
     // 获取商品详情
     fetchById (req, res) {
         let id = req.body.id;
-
+        console.log(req)
         func.connPool(sql.queryById, ['goods', id], (err, rows) => {
             if(err) { 
                 console.log(err)
