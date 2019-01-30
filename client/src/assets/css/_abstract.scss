@@ -1,0 +1,33 @@
+/** 抽象scss 用于每个vue文件的引用*/
+//默认字体
+$c-b: #3F4954;
+$c-black:#363B42;
+$c-light-black:#4C5863;
+//默认背景
+$c-back:#FCFCFC;
+//默认蓝色
+$c-blue:#5d9cec;
+// 移入蓝色
+$c-light-blue: #7baceb;
+$c-content-back:#f4f4f4;
+// 价格红
+$c-price-red:#D95969;
+// 价格绿
+$c-price-blue:#55B766;
+//默认伪类
+@mixin default-pseudo{
+  content:'';
+  display: block;
+  position: absolute;
+}
+// 铺满背景
+@mixin full-background($url){
+  background-image: url($url);
+  background-size: 100% 100%;
+}
+// 定位
+@mixin absolute($left:auto,$top:auto){
+  position: absolute;
+  left:$left;
+  top:$top;
+}
