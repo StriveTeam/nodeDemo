@@ -2,7 +2,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let path = require('path');
 let session = require('express-session');
-let router = require('../routes/router');
+let router = require('./routes/router');
 
 let port = process.env.PORT || 9999;
 let app = express();
