@@ -4,6 +4,7 @@ import router from './router/index';
 import store from './store/index';
 import './plugins/element.js';
 import './assets/zepto';
+import './init.js';
 import MyPlugin from './myplugin';
 import './assets/css/common.scss';
 

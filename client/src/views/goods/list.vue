@@ -6,7 +6,7 @@
     ref="clist"
     height="auto">
   </s-table>
-  <Edit v-if="flag" :goodId="current" />
+  <Edit v-if="flag" :goodId="current" @closeModal="closeModal" />
 </div>
 </template>
 <script>
@@ -69,6 +69,9 @@ export default {
       console.log(val);
       this.current = val.id;
       this.flag = true;
+    },
+    closeModal () {
+      this.flag = false;
     }
   },
   mounted () {
