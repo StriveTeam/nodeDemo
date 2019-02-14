@@ -38,7 +38,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           login(this.loginForm).then(res => {
-            if (res.code === 200) {
+            if (res.data.code === 200) {
               this.$store.commit('user', res.data.user);
               this.$message.success('登录成功');
               this.$router.push('/');

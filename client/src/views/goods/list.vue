@@ -3,6 +3,7 @@
   <s-table
     :columns="columns"
     :data="tableData"
+    :draggable="true"
     ref="clist"
     height="auto">
   </s-table>

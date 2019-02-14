@@ -398,8 +398,23 @@
         cellpadding="0"
       >
         <s-colgroup :columns="columns" :width="tableWidth"></s-colgroup>
+        <!-- 可拖动排序列表 -->
+        <template v-if="typeof draggable !== 'object'">
+          <draggable  v-model="data"  @end="end(data)" :element="'tbody'" :options="{animation: 200,disabled: !draggable}">
+            <tr v-for="(row,i) in data" :key="row.id" @click="rowClick($event,row,i)" :style="{cursor:draggable?'move':'default'}">
+              <td v-for="(item,ci) in columns" :align="item.align" :class="getClass(item,row,ci)" :key="item.prop">
+                <template v-if="item.prop === 'table-check'">
+                  <el-checkbox v-model="checkArr[i]" @change="selected($event,row)"></el-checkbox>
+                </template>
+                <template v-else>
+                  <t-render :row="row" :index="i" :col="item"></t-render>
+                </template>
+              </td>
+            </tr>
+          </draggable>
+        </template>
         <!-- 正常列表 -->
-        <template>
+        <template v-else>
           <tbody>
             <tr v-for="(row,i) in data" :key="i" @click="rowClick($event,row,i)">
               <td
@@ -421,6 +436,7 @@
   </div>
 </template>
 <script>
+/* BUS */
 /**
  * ctable组件说明
  * @param {table.props}
@@ -603,14 +619,6 @@ export default {
       if (!e.target.checked) {
         this.fcolumns[0].check = false;
       }
-    },
-    // 选人
-    selectman (id, bool) {
-      var data = {
-        id: id,
-        bool: bool
-      };
-      BUS.$emit('selectman', data);// eslint-disable-line
     },
     singlecheckd (row) {
       BUS.$emit('fsinglecheck', row.id, row.name);// eslint-disable-line
@@ -809,6 +817,9 @@ export default {
     },
     resize () {
       this.tableWidth = this.$el.clientWidth;
+    },
+    end (data) {
+      this.BUS.$emit('updataData', { data: data });
     }
   },
   // 表头信息初始化

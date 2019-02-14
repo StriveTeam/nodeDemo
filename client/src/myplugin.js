@@ -1,7 +1,9 @@
 import cusComponents from './components/index';
+import draggable from 'vuedraggable';
 export default {
   install (vue) {
     /** 添加自定义组件 */
+    vue.component('draggable', draggable);
     cusComponents.forEach(com => {
       vue.component(com.name, com.component);
     });

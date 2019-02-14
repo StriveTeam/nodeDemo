@@ -16,6 +16,7 @@
 <script>
 // @ is an alias to /src
 import jsonlint from '@/libs/jsonlint';
+// import '@/libs/json2';
 import _ from 'lodash';
 export default {
   name: 'jsonparse',

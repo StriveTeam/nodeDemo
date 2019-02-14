@@ -1,10 +1,10 @@
 /*  eslint-disable */
-if (!this.JSON) {
-  this.JSON = {};
-}
+// if (!this.JSON) {
+//   this.JSON = {};
+// }
 
 (function () {
-  function f (n) {
+  function f(n) {
     // Format integers to have at least two digits.
     return n < 10 ? '0' + n : n;
   }
@@ -13,18 +13,18 @@ if (!this.JSON) {
     Date.prototype.toJSON = function (key) {
       return isFinite(this.valueOf())
         ? this.getUTCFullYear() + '-' +
-                 f(this.getUTCMonth() + 1) + '-' +
-                 f(this.getUTCDate()) + 'T' +
-                 f(this.getUTCHours()) + ':' +
-                 f(this.getUTCMinutes()) + ':' +
-                 f(this.getUTCSeconds()) + 'Z' : null;
+        f(this.getUTCMonth() + 1) + '-' +
+        f(this.getUTCDate()) + 'T' +
+        f(this.getUTCHours()) + ':' +
+        f(this.getUTCMinutes()) + ':' +
+        f(this.getUTCSeconds()) + 'Z' : null;
     };
 
     String.prototype.toJSON =
-        Number.prototype.toJSON =
-        Boolean.prototype.toJSON = function (key) {
-          return this.valueOf();
-        };
+      Number.prototype.toJSON =
+      Boolean.prototype.toJSON = function (key) {
+        return this.valueOf();
+      };
   }
 
   var cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
@@ -47,7 +47,7 @@ if (!this.JSON) {
 
   var rep;
 
-  function quote (string) {
+  function quote(string) {
     // If the string contains no control characters, no quote characters, and no
     // backslash characters, then we can safely slap some quotes around it.
     // Otherwise we must also replace the offending characters with safe escape
@@ -63,7 +63,7 @@ if (!this.JSON) {
       : '"' + string + '"';
   }
 
-  function str (key, holder) {
+  function str(key, holder) {
     // Produce a string from holder[key].
 
     var i;
@@ -86,7 +86,7 @@ if (!this.JSON) {
     // If the value has a toJSON method, call it to obtain a replacement value.
 
     if (value && typeof value === 'object' &&
-                typeof value.toJSON === 'function') {
+      typeof value.toJSON === 'function') {
       value = value.toJSON(key);
     }
 
@@ -118,8 +118,8 @@ if (!this.JSON) {
 
         return String(value);
 
-        // If the type is 'object', we might be dealing with an object or an array or
-        // null.
+      // If the type is 'object', we might be dealing with an object or an array or
+      // null.
 
       case 'object':
 
@@ -151,8 +151,8 @@ if (!this.JSON) {
 
           v = partial.length === 0 ? '[]'
             : gap ? '[\n' + gap +
-                            partial.join(',\n' + gap) + '\n' +
-                                mind + ']'
+              partial.join(',\n' + gap) + '\n' +
+              mind + ']'
               : '[' + partial.join(',') + ']';
           gap = mind;
           return v;
@@ -189,7 +189,7 @@ if (!this.JSON) {
 
         v = partial.length === 0 ? '{}'
           : gap ? '{\n' + gap + partial.join(',\n' + gap) + '\n' +
-                        mind + '}' : '{' + partial.join(',') + '}';
+            mind + '}' : '{' + partial.join(',') + '}';
         gap = mind;
         return v;
     }
@@ -227,8 +227,8 @@ if (!this.JSON) {
 
       rep = replacer;
       if (replacer && typeof replacer !== 'function' &&
-                    (typeof replacer !== 'object' ||
-                     typeof replacer.length !== 'number')) {
+        (typeof replacer !== 'object' ||
+          typeof replacer.length !== 'number')) {
         throw new Error('JSON.stringify');
       }
 
@@ -248,7 +248,7 @@ if (!this.JSON) {
 
       var j;
 
-      function walk (holder, key) {
+      function walk(holder, key) {
         // The walk method is used to recursively walk the resulting structure so
         // that modifications can be made.
 
@@ -276,7 +276,7 @@ if (!this.JSON) {
       if (cx.test(text)) {
         text = text.replace(cx, function (a) {
           return '\\u' +
-                        ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+            ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
         });
       }
 
@@ -294,9 +294,9 @@ if (!this.JSON) {
       // ',' or ':' or '{' or '}'. If that is so, then the text is safe for eval.
 
       if (/^[\],:{}\s]*$/
-        . test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
-          . replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
-          . replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+        .test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
+          .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+          .replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
         // In the third stage we use the eval function to compile the text into a
         // JavaScript structure. The '{' operator is subject to a syntactic ambiguity
         // in JavaScript: it can begin a block or an object literal. We wrap the text
