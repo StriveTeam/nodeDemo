@@ -3,7 +3,7 @@ const path = require('path');
 const resolve = dir => {
   return path.join(__dirname, dir);
 };
-
+console.log(process.env.VUE_APP_SECRET);
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
     ? '/production-sub-path/'
