@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import { login } from '@/api/user';
+import { login } from '@/api/user'
 export default {
   name: 'login',
 
-  data () {
+  data() {
     return {
       loginForm: {
         user_name: '',
@@ -30,36 +30,36 @@ export default {
         user_name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
         pass: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       }
-    };
+    }
   },
 
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
+    submitForm(formName) {
+      this.$refs[formName].validate(valid => {
         if (valid) {
           login(this.loginForm).then(res => {
             if (res.data.code === 200) {
-              this.$store.commit('user', res.data.user);
-              this.$message.success('登录成功');
-              this.$router.push('/');
+              this.$store.commit('user', res.data.user)
+              this.$message.success('登录成功')
+              this.$router.push('/')
             } else {
-              this.$message.error(res.data.msg);
+              this.$message.error(res.data.msg)
             }
-          });
+          })
         }
-      });
+      })
     },
 
-    resetForm (formName) {
-      this.$refs[formName].resetFields();
+    resetForm(formName) {
+      this.$refs[formName].resetFields()
     }
   },
-  created () {
+  created() {
     // if (this.$store.state.user) {
     //   this.$router.push('/admin');
     // }
   }
-};
+}
 </script>
 <style lang="scss">
 .login-form {

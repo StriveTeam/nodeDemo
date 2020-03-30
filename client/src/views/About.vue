@@ -7,16 +7,16 @@
 export default {
   name: 'about',
   components: {},
-  data () {
-    return {};
+  data() {
+    return {}
   },
-  created () {},
+  created() {},
   methods: {},
-  mounted () {}
-};
+  mounted() {}
+}
 </script>
 <style lang="scss" scoped>
-.Json{
+.Json {
   width: 800px;
   height: 300px;
 }

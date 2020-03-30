@@ -4,10 +4,10 @@ export default {
     goodsDetail: null
   },
   mutations: {
-    user (state, payload) {
-      state.user = payload;
+    user(state, payload) {
+      state.user = payload
     }
   },
   getters: {},
   actions: {}
-};
+}

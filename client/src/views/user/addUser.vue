@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import { userAdd } from '@/api/user';
+import { userAdd } from '@/api/user'
 export default {
   name: 'login',
-  data () {
+  data() {
     return {
       addUserForm: {
         name: '',
@@ -39,31 +39,31 @@ export default {
         pass: [{ required: true, message: '请输入密码', trigger: 'blur' }],
         role: [{ required: true, message: '请选择用户角色', trigger: 'change' }]
       }
-    };
+    }
   },
 
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
+    submitForm(formName) {
+      this.$refs[formName].validate(valid => {
         if (valid) {
           userAdd(this.addUserForm).then(res => {
             if (res.code === 200) {
-              this.$message.success('添加成功');
-              this.$router.push('/login');
+              this.$message.success('添加成功')
+              this.$router.push('/login')
             } else {
-              this.$message.error(res.data.msg);
+              this.$message.error(res.data.msg)
             }
-          });
+          })
         }
-      });
+      })
     },
 
-    resetForm (formName) {
-      this.$refs[formName].resetFields();
+    resetForm(formName) {
+      this.$refs[formName].resetFields()
     }
   },
-  created () {}
-};
+  created() {}
+}
 </script>
 <style lang="scss">
 .addUserForm {

@@ -1,14 +1,19 @@
 module.exports = {
-  'presets': [
-    '@vue/app'
+  presets: [
+    [
+      '@vue/app',
+      {
+        useBuiltIns: 'entry'
+      }
+    ]
   ],
-  'plugins': [
+  plugins: [
     [
       'component',
       {
-        'libraryName': 'element-ui',
-        'styleLibraryName': 'theme-chalk'
+        libraryName: 'element-ui',
+        styleLibraryName: 'theme-chalk'
       }
     ]
   ]
-};
+}

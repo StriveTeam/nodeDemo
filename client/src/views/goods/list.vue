@@ -12,13 +12,13 @@
 </template>
 <script>
 // @ is an alias to /src
-import { getGoodsList } from '@/api/goods';
-import Edit from './edit';
+import { getGoodsList } from '@/api/goods'
+import Edit from './edit'
 export default {
   name: 'goods_list',
   components: { Edit },
-  data () {
-    const _this = this;
+  data() {
+    const _this = this
     return {
       current: '',
       flag: false,
@@ -38,8 +38,8 @@ export default {
         {
           label: 'price',
           prop: 'price',
-          render (h, { row }) {
-            return (<div class="allRight">￥{row.price}</div>);
+          render(h, { row }) {
+            return <div class="allRight">￥{row.price}</div>
           }
         },
         {
@@ -48,37 +48,43 @@ export default {
         },
         {
           label: '操作',
-          render (h, { row }) {
+          render(h, { row }) {
             return (
               <div class="operate">
-                <span onClick={ () => { _this.showModal(row); } }>修改</span> | <span>查看</span>
+                <span
+                  onClick={() => {
+                    _this.showModal(row)
+                  }}>
+                  修改
+                </span>{' '}
+                | <span>查看</span>
               </div>
-            );
+            )
           }
         }
       ],
       tableData: []
-    };
-  },
-  created () {
-    getGoodsList().then(res => {
-      this.tableData = res.data.goods;
-    });
-  },
-  methods: {
-    showModal (val) {
-      console.log(val);
-      this.current = val.id;
-      this.flag = true;
-    },
-    closeModal () {
-      this.flag = false;
     }
   },
-  mounted () {
-    this.val = 'aaaa';
+  created() {
+    getGoodsList().then(res => {
+      this.tableData = res.data.goods
+    })
+  },
+  methods: {
+    showModal(val) {
+      console.log(val)
+      this.current = val.id
+      this.flag = true
+    },
+    closeModal() {
+      this.flag = false
+    }
+  },
+  mounted() {
+    this.val = 'aaaa'
   }
-};
+}
 </script>
 <style lang="scss">
 .operate {

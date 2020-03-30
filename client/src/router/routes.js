@@ -1,4 +1,4 @@
-const Home = () => import('@/views/Home.vue');
+const Home = () => import('@/views/Home.vue')
 
 export default [
   {
@@ -29,4 +29,4 @@ export default [
     name: 'goodsList',
     component: () => import('@/views/goods/list.vue')
   }
-];
+]
