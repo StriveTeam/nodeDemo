@@ -4,19 +4,22 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 export default {
   name: 'about',
   components: {},
-  data () {
+  data() {
     return {};
   },
-  created () {},
+  created() {},
   methods: {},
-  mounted () {}
+  mounted() {
+    console.log(history);
+  }
 };
 </script>
 <style lang="scss" scoped>
-.Json{
+.Json {
   width: 800px;
   height: 300px;
 }

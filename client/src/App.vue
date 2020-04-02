@@ -24,7 +24,7 @@ export default {
     };
   },
   watch: {
-    '$route' () {
+    $route () {
       const routName = this.$route.name;
       console.log(routName);
       if (routName === 'login') {
@@ -41,40 +41,41 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   height: 100%;
 }
-.el-header, .el-footer {
-  background-color: #B3C0D1;
+.el-header,
+.el-footer {
+  background-color: #b3c0d1;
   color: #333;
   text-align: center;
   line-height: 60px;
 }
 .el-aside {
-  background-color: #D3DCE6;
+  background-color: #d3dce6;
   color: #333;
   text-align: center;
   line-height: 200px;
 }
 .el-main {
-  background-color: #E9EEF3;
+  background-color: #e9eef3;
   color: #333;
   text-align: center;
   // line-height: 160px;
-  height: 100%
+  height: 100%;
 }
-html,body{
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-.mainCon{
+.mainCon {
   height: 100%;
 }
 body > .el-container {
   margin-bottom: 40px;
-  height: 100%
+  height: 100%;
 }
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {

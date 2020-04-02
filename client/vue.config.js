@@ -13,7 +13,7 @@ module.exports = {
   indexPath: 'index.html',
   filenameHashing: true,
   // true时eslint-loader 会将 lint 错误输出为编译警告，不会编译失败 error：输出错误，编译失败
-  lintOnSave: 'error',
+  lintOnSave: true,
   devServer: {
     overlay: {
       warnings: true,
@@ -26,6 +26,12 @@ module.exports = {
         changeOrigin: true
         // pathRewrite: {'^/api': ''},
       }
+    }
+  },
+  configureWebpack: {
+    externals: {
+      '$': 'jQuery ',
+      'jQuery': 'jQuery '
     }
   },
   chainWebpack: config => {
