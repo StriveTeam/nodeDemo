@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@jd/wyg-jrtc-test": "0.0.1",
     "@vue/eslint-config-prettier": "^6.0.0",
     "axios": "^0.18.0",
     "core-js": "^3.6.4",
@@ -15,7 +16,9 @@
     "element-ui": "^2.4.5",
     "eslint-plugin-prettier": "^3.1.2",
     "file-saver": "^2.0.2",
+    "js-md5": "^0.7.3",
     "node-gyp": "^3.8.0",
+    "node-sass": "^4.14.1",
     "rebuild": "^0.1.2",
     "sortablejs": "^1.8.3",
     "vue": "^2.5.17",
@@ -32,7 +35,6 @@
     "babel-plugin-component": "^1.1.1",
     "eslint": "^5.10.0",
     "eslint-plugin-vue": "^5.0.0-0",
-    "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-cli-plugin-element": "^1.0.0",
     "vue-template-compiler": "^2.5.17"

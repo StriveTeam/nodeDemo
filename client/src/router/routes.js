@@ -28,5 +28,10 @@ export default [
     path: '/goods',
     name: 'goodsList',
     component: () => import('@/views/goods/list.vue')
+  },
+  {
+    path: '/table',
+    name: 'table',
+    component: () => import('@/views/TableTest.vue')
   }
 ]
