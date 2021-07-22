@@ -9,6 +9,7 @@ import './assets/zepto'
 import './init.js'
 import MyPlugin from './myplugin'
 import './assets/css/common.scss'
+import './assets/icon/iconfont.css'
 
 Vue.use(MyPlugin)
 Vue.config.productionTip = false

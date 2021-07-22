@@ -33,5 +33,10 @@ export default [
     path: '/table',
     name: 'table',
     component: () => import('@/views/TableTest.vue')
+  },
+  {
+    path: '/tabs',
+    name: 'tabs',
+    component: () => import('@/views/TabsTest.vue')
   }
 ]

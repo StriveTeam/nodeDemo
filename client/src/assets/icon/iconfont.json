@@ -1,0 +1,51 @@
+{
+  "id": "2274551",
+  "name": "p'ro",
+  "font_family": "iconfont",
+  "css_prefix_text": "el-icon-wyg-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18863967",
+      "name": "arrow-right",
+      "font_class": "arrow-right",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "18863968",
+      "name": "attract",
+      "font_class": "attract",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "18863969",
+      "name": "arrow-up",
+      "font_class": "arrow-up",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "18863970",
+      "name": "arrow-down",
+      "font_class": "arrow-down",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "18863971",
+      "name": "alarm-clock",
+      "font_class": "alarm-clock",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "18857535",
+      "name": "aaaaaa",
+      "font_class": "aaa",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

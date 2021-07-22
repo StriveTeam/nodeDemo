@@ -5,7 +5,7 @@
       :data="tableData"
       tooltip-effect="dark"
       style="width: 100%"
-      @selection-change="(val) => (multipleSelection = val.map((o) => JSON.parse(o.id)))"
+      @selection-change="(val, $event) => (multipleSelection = val.map((o) => JSON.parse(o.id)))"
     >
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column label="日期" width="120">
@@ -20,6 +20,7 @@
       </el-button>
       <el-button @click="toggleSelection()">取消选择</el-button>
       <el-button @click="ss">sssss</el-button>
+      <el-button @click="tt($event)">Event Test</el-button>
     </div>
   </div>
 </template>
@@ -92,14 +93,16 @@ export default {
       this.multipleSelection = val.map(o => o.date)
       console.log(this.multipleSelection)
     },
+    tt(e) {
+      console.log(e)
+    },
     ss() {
-      userAdd({ idArr: this.multipleSelection }).then(res => {
-        if (res.code === 200) {
-          this.$message.success('添加成功')
-          this.$router.push('/login')
-        } else {
-          this.$message.error(res.data.msg)
-        }
+      this.multipleSelection.push(0)
+      this.add(this.multipleSelection)
+    },
+    add(idArr) {
+      userAdd({ idArr }).then(res => {
+        console.log(res)
       })
     }
   },

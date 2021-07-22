@@ -1,5 +1,9 @@
 <template>
   <div style="width: 400px; margin: 100px auto">
+    <el-button size="small" class="el-icon-wyg-aaa" @click="handleAdd" style="padding:6px 4px;width: 90px">
+      新增群组
+  </el-button>
+  <span class="el-icon-wyg-attract"></span>
     <Test :list="listData" />
     <div class="con">
       <div class="same_module">
@@ -29,6 +33,7 @@
 
 <script>
 import Test from './Test'
+import JRTC from '../libs/JRTC';
 export default {
   components: { Test },
   data() {
@@ -59,6 +64,9 @@ export default {
       dom.style.transition = 'height ' + time + 'ms'
       dom.style.height = height + 'px'
     }
+  },
+  mounted() {
+    JRTC.init('192bc3400174019265a7b1ad1ea7c6c7', true)
   }
 }
 </script>
