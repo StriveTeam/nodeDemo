@@ -10,7 +10,7 @@
   "dependencies": {
     "@jd/wyg-jrtc-test": "0.0.1",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "draggable": "^4.2.0",
     "element-ui": "^2.4.5",
