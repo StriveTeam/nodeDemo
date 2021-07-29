@@ -33,7 +33,8 @@ export default {
         this.login = true
       }
     }
-  }
+  },
+  create()
 }
 </script>
 <style lang="scss">

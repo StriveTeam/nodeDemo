@@ -3,7 +3,7 @@ let db = require('../configs/db');
 let pool = mysql.createPool(db);
 
 module.exports = {
-    pool (sql, val, cb) {
+    connPool (sql, val, cb) {
         pool.getConnection((err, conn) => {
             conn.query(sql, val, (err, rows) => {
                 if (err) {
@@ -23,7 +23,6 @@ module.exports = {
         if (!data) {
             delete obj.data;
         }
-
         res.send(obj);
     },
 };

@@ -20,7 +20,7 @@ module.exports = {
                 return 
             } 
             rows = formatData(rows);
-            res.json({code: 200, msg: 'ok', goods: rows});
+            res.json({code: 200, msg: 'ok', data: rows});
         });
     },
 
